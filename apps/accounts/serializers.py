@@ -2,6 +2,10 @@ from rest_framework import serializers
 from .models import User
 
 
+from rest_framework import serializers
+from .models import User
+
+
 class RegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(
         write_only=True
@@ -11,7 +15,6 @@ class RegisterSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             'id',
-            'username',
             'email',
             'password',
             'role',
@@ -33,7 +36,6 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = User
         fields = [
             'id',
-            'username',
             'email',
             'role',
             'phone',
